@@ -1,0 +1,111 @@
+html,body{
+	height:100%;
+	overflow:hidden;
+}
+body{
+	background: url(../images/shut_bg.png) no-repeat;
+	background-size: 100% 100%;
+	border-top:.01rem solid transparent;
+}
+.shut{
+	background: url(../images/shut_box.png) no-repeat;
+	background-size: cover;
+	margin: auto;
+	height: 8.57rem;
+	width: 6.55rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	border-top: .01rem solid transparent;
+}
+.shut ul{
+	height: 6.32rem;
+	width: 5.4rem;
+	padding-top:1.2rem;
+	margin:0 auto;
+}
+.shut li{
+	width: 1.15rem;
+	height: 1.32rem;
+	margin:.13rem .1rem;
+	float: left;
+	font-size: .36rem;
+	font-family: HKSV;
+	color: #fff;
+	text-align: center;
+    -webkit-text-stroke: .02rem #000;
+    font-weight: bold;
+    text-indent: .025rem;
+    line-height: 1.1rem;
+    position: relative;
+}
+.pass{
+	background: url(../images/icon.png) -5.8rem -.93rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.no_pass{
+	background: url(../images/icon.png) -4.63rem -.93rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.shut li p{
+	width: .56rem;
+	height: .16rem;
+	position: absolute;
+	top: .85rem;
+	left: .33rem;
+}
+.star_1{
+	background: url(../images/icon.png) 0rem -7.7rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.star_2{
+	background: url(../images/icon.png) 0rem -7.94rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.star_3{
+	background: url(../images/icon.png) 0rem -8.17rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.back{
+	background: url(../images/icon.png) -1.54rem -6.7rem no-repeat;
+	background-size: 7.5rem 10rem;
+	width: .93rem;
+	height: .96rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: -.3rem;
+}
+.prev{
+	background: url(../images/icon.png) -2.55rem -6.76rem no-repeat;
+	background-size: 7.5rem 10rem;
+	width: .5rem;
+	height: .4rem;
+	position: absolute;
+	top:4.26rem;
+	left:-.1rem;
+	border: none;
+	outline: none;
+}
+.prev-active{
+	background: url(../images/icon.png) -3.14rem -7.25rem no-repeat;
+	background-size: 7.5rem 10rem;
+}
+.next{
+	background: url(../images/icon.png) -2.55rem -7.25rem no-repeat;
+	background-size: 7.5rem 10rem;
+	width: .5rem;
+	height: .43rem;
+	position: absolute;
+	top:4.26rem;
+	right:-.1rem;
+	border: none;
+	outline: none;
+}
+.next-active{
+	background: url(../images/icon.png) -3.15rem -6.76rem no-repeat;
+	background-size: 7.5rem 10rem;
+}

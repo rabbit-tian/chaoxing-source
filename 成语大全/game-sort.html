@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏排行</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <link rel="stylesheet" href="css/global-1.0.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/responsive-1.0.js"></script>
+    <script src="js/md5.js"></script>
+</head>
+<body style="background: #f4f4f4;width: 100%;height: 100%;overflow: hidden">
+<div class="wrapHead">
+    <header class="head-blue">
+        <div class="head-signal"></div>
+        <div class="head-con">
+            <a href="javascript:void(0);" class="head-return"><img src="images/return.png" alt=""></a>
+            <div class="head-ul">
+                <ul>
+                    <li class="cur" fid="2">本单位排行</li>
+                    <li fid="0">全网排行</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="sort-list">
+        <ul>
+            <li class="cur" game-type="chengyu001"><span>成语填字排名</span></li>
+            <li game-type="chengyu002"><span>成语消消乐排名</span></li>
+        </ul>
+    </div>
+</div>
+<div class="center">
+    <div class="tips">
+        <span></span>
+    </div>
+    <div class=" ranking my-ranking ">
+        <table>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="ranking ranking-list">
+        <table>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pullUp"><span class="pullUpIcon"></span>正在加载中...</div>
+    <div class="pullEnd">
+        <p>已经到底了...</p>
+    </div>
+</div>
+<script src="js/CXJSBridge.js"></script>
+<script src="js/base.js"></script>
+<script src="js/app.utils.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/idiom.js"></script>
+<script src="js/search-sort.js"></script>
+<script src="js/mobileVersion.js"></script>
+<script src="js/XBack.js"></script>
+</body>
+</html>

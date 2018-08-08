@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title></title>
+    <link rel="stylesheet" href="css/global-1.0.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" href="fonts/FZJZJW/FZJZJW.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/responsive-1.0.js"></script>
+    <script src="js/initstageidioms.v0.1.js"></script>
+    <script src="js/CXJSBridge.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/app.utils.js"></script>
+    <script src="js/md5.js"></script>
+    <script src="js/idiom.js"></script>
+</head>
+<body>
+<header class="head-blue">
+    <div class="head-signal"></div>
+    <div class="head-con">
+        <a href="javascript:void(0);" class="head-return"><img src="images/return.png" alt=""></a>
+        <span>成语消消乐</span>
+    </div>
+</header>
+<div class="top_menu">
+       <span class="time" id="time">
+           <em class="hour">00</em>:<em class="minute">00</em>:<em class="second">00</em>
+       </span>
+    <span class="tit">第<i id="stage"></i>关</span>
+    <span class="gemstone" id="gemstone"></span>
+</div>
+<div class="center">
+    <div>
+        <ul class="font-list">
+        </ul>
+        <div class="prompt-box">
+            <p class="prompt-text hide"></p>
+            <p class="error-text hide">再想一想</p>
+        </div>
+    </div>
+    <div class="sure-idioms">
+        <p>
+            <span class="text1">已消除成语：</span><span class="text2">（点击可查看详细解释）</span>
+        </p>
+        <div>
+            <ul class="idiom-list">
+            </ul>
+            <div class="button-box">
+                <div class="button reset-button"></div>
+                <div class="button prompt-button"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 成语详情 -->
+<div class="idiom-info hide">
+    <ul class="font">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="pinyin">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="info">
+        <p class="name">【解释】</p>
+        <p class="content" id="jieshi"></p>
+        <p class="name">【出处】</p>
+        <p class="content" id="chuchu"></p>
+        <p class="name">【举例】</p>
+        <p class="content" id="lizi"></p>
+    </div>
+</div>
+<!-- 弹出提示 -->
+<div class="popup1 hide">
+    <p class="prompt-text2">使用提示功能将扣除3颗宝石，是否继续使用提示？</p>
+    <div class="btn-box">
+        <div class="button2 btn-yellow no-button">不用提示</div>
+        <div class="button2 btn-blue use-button">使用提示</div>
+    </div>
+</div>
+<!-- 闯关成功弹出框 -->
+<div class="popup2 hide">
+    <p class="star star1"></p>
+    <p class="time">本关用时<span id="useTime"></span></p>
+    <p class="popup-text">获得宝石<span id="getGemstone">5个</span></p>
+    <div class="btn-box">
+        <div class="button2 btn-blue" id="nextStage">下一关</div>
+    </div>
+</div>
+<!-- 宝石不够提示信息 -->
+<div class="popup3 hide">
+    <img class="error" src="images/error.png" alt="">
+    <p class="prompt-text2">宝石数量不足，不能提示</p>
+    <div class="btn-box">
+        <div class="button2 btn-blue" id="errSure">确定</div>
+    </div>
+</div>
+<!--返回提示 -->
+<div class="popup5 hide">
+    <p class="prompt-text2">是否确定退出？</p>
+    <div class="btn-box">
+        <div class="button2 btn-yellow" id="cancel">取消</div>
+        <div class="button2 btn-blue" id="sure">确定</div>
+    </div>
+</div>
+<!-- 蒙层 -->
+<div class="translucent-bg hide"></div>
+</body>
+<script src="js/XBack.js"></script>
+<script src="js/common.js"></script>
+<script src="js/xiaoxiaole.js"></script>
+<script type="text/javascript" src="js/mobileVersion.js"></script>
+<script type="text/javascript">
+    var openMobileUrl = function () {
+        var sharebacktype = 1;
+        if (dealVersion(getXxtVersion()) >= dealVersion("3.1.2.1")) {
+            sharebacktype = 7
+        }
+        var idom=new idiomsApp.idioms;
+        var apphttp=idom.apphttp;
+        var resourceUrl = apphttp+'xiaoxiaole.html';
+        var appScheme = "chaoxingshareback://url=" + encodeURIComponent(resourceUrl) + "&title=" + encodeURIComponent('成语搜索') + "&sharebacktype=" + sharebacktype;
+        var tipUrl = "http://zhuanti.chaoxing.com/special/course/tips?apptag=1000&appScheme=" + encodeURIComponent(appScheme);
+        //如果是ios
+        if (isIos()) {
+            //如果版本大于等于IOS9
+            var iosVersion = getIOSVersion();
+            if (iosVersion >= 9) {
+                tipUrl = "http://share1.chaoxing.com/mobile/mooc/tocourse/90394356?sharebacktype=" + sharebacktype + "&appScheme=" + encodeURIComponent(appScheme) + "&title=成语大师&apptag=1000&url=" + encodeURIComponent(resourceUrl);
+            }
+        }
+        document.location.href = tipUrl;
+    };
+
+    var header=navigator.userAgent;//获取操作系统版本信息
+    if(header.indexOf("ChaoXingStudy")>0){//学习通中
+        $("#share").hide();
+        $(".top_menu").css("top","1.08rem");
+        $(".center").css("margin-top","1.94rem");
+    }else {//网页中
+        var html='<div id="share">' +
+                '<img src="images/shareLogo.png" alt="" class="logo">' +
+                '<img src="images/closeBtn.png" alt="" class="closeBtn">' +
+                '<a href="javascript:void(0);" onclick="openMobileUrl()">' +
+                '<img src="images/openBtn.png" alt=""></a>' +
+                '</div>'
+        $("header").prepend(html);
+        $(".top_menu").css("top","2.2rem");
+        $(".center").css("margin-top","3.12rem");
+    }
+</script>
+<script type="text/javascript" src="//js.users.51.la/19531181.js"></script>
+</html>

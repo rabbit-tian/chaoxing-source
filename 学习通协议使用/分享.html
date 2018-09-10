@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+  />
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <title>红苹果幼儿园</title>
+  <script src="js/responsive-1.0.js"></script>
+</head>
+
+<body>
+  <header class="head-pink">
+    <div class="head-signal"></div>
+    <div class="head-con">
+      <a href="" class="head-return">
+        <img src="images/return.png" alt="">
+      </a>
+      <span>学习通调试</span>
+    </div>
+  </header>
+
+
+
+  <div class="main" id="main">
+    <input id="share" type="button" value="点击分享" />
+  </div>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/mobileVersion.js"></script>
+  <script src="js/base.js"></script>
+  <script src="js/CXJSBridge.js"></script>
+  <script src="js/app.utils.js"></script>
+  <script type="text/javascript">
+    //  获取用户信息
+    //此方法在学习通页面一打开就会自动运行，原理相当于jquery的onready()方法；
+    var fid, puid, uid, uname, cataid;
+    function _jsBridgeReady() {
+      try {
+        jsBridge.bind("CLIENT_GET_USERINFO", function (object) {
+          //客户端回调，返回给页面用户信息
+          fid = object.fid;
+          puid = object.puid;
+          uname = object.name;
+          uid = object.uid;
+          cataid = object.cataid;
+
+            $("#share").click(function () {
+            share(
+              "随手拍",
+              "http://172.168.100.158:8860/1-02active.html",
+              "随手拍,视频,小程序"
+            );
+          });
+
+          function share(aa, bb, cc) {
+            resUrl = bb;
+            var content = { resTitle: aa, resUrl: resUrl, resUid: cc, toolbarType: 2 };
+            if (resUrl != null && resUrl != "") {
+              jsBridge.postNotification("CLIENT_TRANSFER_INFO", {
+                cataid: 100000015,
+                content: content
+              });
+            }
+          }
+
+        });
+      } catch (e) { }
+      try {
+        jsBridge.bind("CLIENT_LOGIN_STATUS", function (object) {
+          //客户端回调，通知用户的登录状态
+          // alert("是否登录："+object.status);
+          if (object.status == 1) {
+            //当前是已经登录的状态
+            
+            jsBridge.postNotification("CLIENT_GET_USERINFO", { accountKey: "" }); //发送给客户端，获取用户信息
+          }
+        });
+      } catch (e) { }
+      jsBridge.postNotification("CLIENT_LOGIN_STATUS", { accountKey: "" }); //发送给客户端是否是登录状态
+    }
+  </script>
+
+</body>
+
+</html>

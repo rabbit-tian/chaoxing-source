@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title>红苹果幼儿园</title>
+    <script src="js/responsive-1.0.js"></script>
+    <link rel="stylesheet" href="css/global-1.0.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="head-pink">
+        <div class="head-signal"></div>
+        <div class="head-con">
+            <a href="" class="head-return">
+                <img src="images/return.png" alt="">
+            </a>
+            <span>学习通调试</span>
+        </div>
+    </header>
+    <style>
+        .shenyang {
+            width: 100px;
+            height: 50px;
+            color: rebeccapurple;
+            margin: 10px;
+            border: 1px solid salmon;
+        }
+    </style>
+    <div class="main" id="main">
+
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/mobileVersion.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/CXJSBridge.js"></script>
+    <script src="js/app.utils.js"></script>
+
+    <script type="text/javascript">
+        var image = [{
+            mp4: 'http://file.m.superlib.com/PublicClass/mp4/20130917/1/123/1.mp4',
+            m3u8: 'http://file.m.superlib.com/PublicClass/m3u8/20130917/1/123/1/index_hd.m3u8',
+            title: '麻将文化1111'
+        }, {
+            mp4: 'http://file.m.superlib.com/PublicClass/mp4/20130917/1/123/1.mp4',
+            m3u8: 'http://file.m.superlib.com/PublicClass/m3u8/20130917/1/123/1/index_hd.m3u8',
+            title: '麻将文化2222'
+        }, {
+            mp4: 'http://file.m.superlib.com/PublicClass/mp4/20130917/1/123/1.mp4',
+            m3u8: 'http://file.m.superlib.com/PublicClass/m3u8/20130917/1/123/1/index_hd.m3u8',
+            title: '麻将文化3333'
+        }];
+
+        let html = '';
+        for (let i = 0; i < image.length; i++) {
+            const item = image[i];
+            html += '<div class="shenyang" data-mp4="' + item.mp4 + '" data-m3u8="' + item.m3u8 + '" data-title="' + item.title + '">我要看视频</div>';
+        }
+        $('#main').append(html);
+
+        $('.shenyang').on('click', function () {
+            console.log($(this));
+            console.log($(this).data('title'));
+            console.log($(this).data('mp4'));
+
+            jsBridge.postNotification('CLIENT_VIDEO_PLAYER', 
+            {
+                "videolist": [
+                    { 
+                        "videopathm3u8": $(this).data('m3u8'), "videopathmp4": $(this).data('mp4'), "title": $(this).data('title') },
+                     { 
+                         "videopathm3u8": $(this).data('m3u8'), "videopathmp4": $(this).data('mp4'), "title": $(this).data('title') }],
+
+                "title": $(this).data('title')
+            });
+        });
+
+        /*  function _jsBridgeReady(){
+              jsBridge.postNotification("CLIENT_CHOOSE_IMAGE", {camare:"3"} )
+          }*/
+        //   var jsBridge_cmd_handlers = {}; //避免重复绑定回调方法
+        //   function openPhoto(camare){
+        //       var param = {camare:camare};	//3是可以选择相册，=5的话只能拍照，不能从相册中选择
+        //       if (!jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"]) {
+        //           var handler = jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"] = function (object) {
+        //               if (object && object.files) {
+        //                   var imagedata = jQuery.parseJSON(object.files);
+        //                   for(var i = 0; i<imagedata.length; i++){
+        //                       if(i < (imagedata.length-1) ){
+        //                           continue;
+        //                       }
+        //                       var imageName=imagedata[i].name;
+        //                       var objectid=imagedata[i].objectid;
+        //                       //图片地址需要拼接，原图地址是http://p.ananas.chaoxing.com/star3/origin/objectid.jpg
+        //                       //也可以裁剪，比如裁剪成200*200的图，裁剪地址是：http://p.ananas.chaoxing.com/star3/200_200c/objectid.jpg
+        //                       //http://p.ananas.chaoxing.com/star3/200_200f/objectid.jpg
+        //                       alert(JSON.stringify(object));
+
+        //                       //拿到了图片地址了，之后进行下边的逻辑
+
+
+
+        //                   }
+        //               }
+        //           };
+        //           //绑定回调
+        //           try {
+        //               jsBridge.bind('CLIENT_CHOOSE_IMAGE_RESULT',handler);
+        //           } catch (e) {
+        //               alert(e);
+        //           }
+        //       }
+        //       jsBridge.postNotification('CLIENT_CHOOSE_IMAGE',param);
+        //   }
+
+        //   //用客户端播放音频
+        //   function playAudio(){
+        //       var path1 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/3.mp3";
+        //       var path2 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/9.mp3";
+        //       jsBridge.postNotification('CLIENT_AUDIO_PLAYER', {"sourceType":1,"title":"名称","activeIndex":0,"list":[{"mediaId":"id1","mediaTitle":"name1","mediaPath":path1,"mediaPathIOS":path1},{"mediaId":"id2","mediaTitle":"name2","mediaPath":path2,"mediaPathIOS":path2}]} ) ;
+        //   }
+
+        // 播放视频
+        // function video1() {
+        //     var mp4 = "http://file.m.superlib.com/PublicClass/mp4/20130917/1/123/1.mp4";
+        //     var m3u8 = "http://file.m.superlib.com/PublicClass/m3u8/20130917/1/123/1/index_hd.m3u8";
+        //     var title = "麻将文化";
+        //     jsBridge.postNotification('CLIENT_VIDEO_PLAYER', {
+        //         "videolist": [{ "videopathm3u8": m3u8, "videopathmp4": mp4, "title": "麻将文化1" }, { "videopathm3u8": m3u8, "videopathmp4": mp4, "title": "麻将文化2" }],
+        //         "title": "麻将"
+        //     }
+        //     );
+        // }
+
+
+    </script>
+
+</body>
+
+</html>

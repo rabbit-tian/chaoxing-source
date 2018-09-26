@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/mobileVersion.js"></script>
+    <script src="js/responsive-1.0.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        header{width: 100%;overflow: hidden;background: #ffffff;}
+        .head-signal{width: 100%;height: .2rem;}
+        .head-blue{background:#4e9fee;}
+        .head-con{height:.88rem;overflow: hidden; position: relative;}
+        .head-return{display: block;overflow: hidden;position: absolute;
+            left: .3rem;z-index: 2;bottom: .25rem;}
+        .head-return img{display: block;width: .2rem;height: .36rem;}
+        .head-con span{width: 100%;text-align: center;line-height: .88rem;font-size: .36rem;
+            color: #ffffff;display: block;}
+        .head-sure{display: block;  font-size: .28rem;  color: #ffffff;
+            margin-top: .04rem;position: absolute;top: .2rem;right: .3rem;}
+    </style>
+</head>
+<body>
+<!--head-blue 是加的头部颜色  默认白色不添加此类名-->
+<header class="head-blue header">
+    <!--这块是头部信号这块的高度  普通手机是20px iPhoneX是44px-->
+    <div class="head-signal"></div>
+    <div class="head-con">
+        <!--返回的图片 白色的命名为return 黑色的命名为return1-->
+        <a href="" class="head-return"><img src="images/return.png" alt=""></a>
+        <span>成语填字</span>
+        <!--确定-->
+        <!-- <a href="" class="head-sure">确定</a>-->
+        <!--图标-->
+        <!-- <a href=""><img src="" alt=""></a>-->
+    </div>
+</header>
+
+<div class="main">
+
+</div>
+
+</body>
+</html>

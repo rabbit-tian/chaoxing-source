@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./select2.css">
+</head>
+<body>
+  <div class="multiSelection">
+    <select id="sel_menu2" multiple="multiple" style="width: 334px;">
+    </select>
+  </div>
+
+  <select id="sel_menu" style="width: 162px;">
+  </select>
+
+  <script src="http://code.jquery.com/jquery-compat-git.js"></script>
+  <script src="./select2.full.js"></script>
+  <script>  
+   
+   var initdata = ["学生", "家长", "老师", "校长", "副校长", "班干部", "学习委员"];
+  $("#sel_menu2").select2({
+      tags: true,
+      placeholder: '请选择角色',
+      multiple: true,
+      maximumInputLength: 10,//允许长度  
+      data: initdata,
+      allowClear: true
+    });
+
+    $("#sel_menu").select2({
+        tags: false,
+        placeholder: '请选择部门',
+        minimumResultsForSearch: -1,
+        data: initdata,
+        maximumInputLength: 1,//允许长度  
+        allowClear: true
+      });
+  
+  </script>
+</body>
+</html>

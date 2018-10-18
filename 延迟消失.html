@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .div2{
+            width: 60px;
+            height: 20px;
+            background: red;
+            cursor: pointer;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+
+    <script>
+        var div1 = document.querySelector('.div1');
+        var div2 = document.querySelector('.div2');
+
+        var timerId = 0;
+
+        div1.onmouseover = function (){
+            div2.style.display = 'block';
+        }
+
+        div1.onmouseout = function (){
+
+            autoPlay();
+
+        }
+
+        div2.onmouseover = function (){
+            clearTimeout(timerId);
+        }
+
+        div2.onmouseout = function (){
+
+            autoPlay();
+
+        }
+
+        // 封装函数
+
+        function autoPlay(){
+            timerId = setTimeout(function (){
+                div2.style.display = 'none';
+            },300);
+        }
+
+    </script>
+</body>
+</html>

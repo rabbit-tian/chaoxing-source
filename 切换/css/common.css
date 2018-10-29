@@ -1,0 +1,11 @@
+ header{width: 100%;background: #ffffff;}
+        .head-signal{width: 100%;height: .2rem;}
+        .head-blue{background:#4e9fee;}
+        .head-con{height:.88rem;overflow: hidden; position: relative;}
+        .head-return{display: block;overflow: hidden;position: absolute;
+            left: .3rem;z-index: 2;bottom: .25rem;}
+        .head-return img{display: block;width: .2rem;height: .36rem;}
+        .head-con span{width: 100%;text-align: center;line-height: .88rem;font-size: .36rem;
+            color: #ffffff;display: block;}
+        .head-sure{display: block;  font-size: .28rem;  color: #ffffff;
+            margin-top: .04rem;position: absolute;top: .2rem;right: .3rem;}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成语大师</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="description" content="成语大师,学习通,小程序" />
+    <link rel="stylesheet" href="css/global-1.0.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/responsive-1.0.js"></script>
+</head>
+<body>
+<div class="body-bg"></div>
+<div class="game-list">
+    <ul>
+        <li data-url="guanqia.html" game-type="chengyu001"></li>
+        <li data-url="guanqia.html" game-type="chengyu002"></li>
+        <li data-url="game-sort.html"></li>
+        <li data-url="search.html"></li>
+    </ul>
+</div>
+<div class="button2 btn-exit" id="exit" ></div>
+<div class="translucent-bg" style="display: none"></div>
+<div class="popup7" style="display: none">
+    <p class="prompt-text">请下载学习通APP后再用</p>
+    <div class="btn-box">
+        <div class="button btn-yellow" id="back">返回</div>
+        <div class="button2 btn-blue" id="retry">下载</div>
+    </div>
+</div>
+<div id="shareApp">
+    <ul>
+        <li id="forward">转发</li>
+        <li id="exitApp">退出</li>
+        <li id="cancel">取消</li>
+    </ul>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/CXJSBridge.js"></script>
+<script src="js/app.utils.js"></script>
+<script src="js/mobileVersion.js"></script>
+<script src="js/idiom.js"></script>
+<script src="js/XBack.js"></script>
+<script>
+    var idom=new idiomsApp.idioms;
+    var resourceUrl=idom.apphttp;
+    var  sharebacktype = null;
+    var tipUrl=null;
+    if (dealVersion(getXxtVersion()) >= dealVersion("3.1.2.1")) {
+        sharebacktype = 7;
+    }else{
+        $('.translucent-bg,.popup7').show();
+        sharebacktype = 1;
+    }
+    resourceUrl=resourceUrl+'index.html';
+    var appScheme = "chaoxingshareback://url=" + encodeURIComponent(resourceUrl) + "&title=" + encodeURIComponent('成语搜索') + "&sharebacktype=" + sharebacktype;
+    tipUrl = "http://zhuanti.chaoxing.com/special/course/tips?apptag=1000&appScheme=" + encodeURIComponent(appScheme);
+    //如果是ios
+    if (isIos()) {
+        //如果版本大于等于IOS9
+        var iosVersion = getIOSVersion();
+        if (iosVersion >= 9) {
+            tipUrl = "http://share1.chaoxing.com/mobile/mooc/tocourse/90394356?sharebacktype=" + sharebacktype + "&appScheme=" + encodeURIComponent(appScheme) + "&title=&apptag=1000&url=" + encodeURIComponent(resourceUrl);
+        }
+    }
+    $("#retry").click(function () {
+        document.location.href = tipUrl;
+    });
+    $("#back").click(function () {
+        window.location.href=document.referrer;
+    });
+    /*学习通中的写法*/
+    function _jsBridgeReady() {
+        var idioms = new idiomsApp.idioms;
+        var apphttp = idioms.apphttp;
+        $(".game-list li").click('touchend', function () {
+            var dataUrl = $(this).attr('data-url');
+            var gametype = $(this).attr('game-type');
+            $(this).addClass('cur').siblings().removeClass('cur');
+            var wait = setInterval(function () {
+
+                if (!$(this).is(":animated")) {
+                    clearInterval(wait);
+                    if (gametype != undefined) {
+                        jsBridge.postNotification('CLIENT_OPEN_URL', {
+                            'title': '',
+                            'loadType': '1',
+                            'webUrl': apphttp + dataUrl + '?gameType=' + gametype,
+                            'toolbarType': '0'
+                        })
+                    } else {
+                        jsBridge.postNotification('CLIENT_OPEN_URL', {
+                            'title': '搜索',
+                            'loadType': '1',
+                            'webUrl': apphttp + dataUrl,
+                            'toolbarType': '0'
+                        })
+                    }
+                }
+            }, 400);
+        });
+        //隐藏学习通中白色顶部
+        AppUtils.hideToolbar({
+            toolbarType:"0"
+        });
+        $('#exit').click(function () {
+            $("#shareApp").show().addClass('fadeInUp');
+            $(".translucent-bg").show();
+        });
+        $("#exitApp").click(function () {
+            AppUtils.closeView();
+        });
+        $("#cancel").click(function () {
+            $("#shareApp,.translucent-bg").hide();
+        });
+        $("#forward").click(function () {
+            idom.share1("成语大师",idom.apphttp+"index.html",'成语大师,学习通,小程序');
+        });
+        $(".translucent-bg").click(function () {
+            $("#shareApp,.translucent-bg").hide();
+        });
+    }
+</script>
+<script type="text/javascript" src="//js.users.51.la/19531181.js"></script>
+</body>
+</html>

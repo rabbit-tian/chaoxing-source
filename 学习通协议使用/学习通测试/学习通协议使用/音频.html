@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title>红苹果幼儿园</title>
+    <script src="js/responsive-1.0.js"></script>
+    <link rel="stylesheet" href="css/global-1.0.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="head-pink">
+        <div class="head-signal"></div>
+        <div class="head-con">
+            <a href="" class="head-return">
+                <img src="images/return.png" alt="">
+            </a>
+            <span>学习通调试</span>
+        </div>
+    </header>
+    <style>
+        .shenyang {
+            width: 100px;
+            height: 50px;
+            color: rebeccapurple;
+            margin: 10px;
+            border: 1px solid salmon;
+        }
+    </style>
+    <div class="main" id="main">
+        <input type="button" value="打开音频" onclick="return playAudio()">
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/mobileVersion.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/CXJSBridge.js"></script>
+    <script src="js/app.utils.js"></script>
+
+    <script type="text/javascript">
+
+
+
+        //用客户端播放音频
+        function playAudio(){
+            var path1 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/3.mp3";
+            var path2 = "http://file.m.superlib.com/MobileIRDAudio/cxts/mp3new/mp3new3/20130815/9.mp3";
+            jsBridge.postNotification('CLIENT_AUDIO_PLAYER', 
+            {
+                "sourceType":1,"title":"名称","activeIndex":0,
+            "list":[
+                {
+                    "mediaId":"id1",
+                    "mediaTitle":"name1",
+                    "mediaPath":path1,
+                    "mediaPathIOS":path1},
+                {
+                    "mediaId":"id2",
+                    "mediaTitle":"name2",
+                    "mediaPath":path2,
+                    "mediaPathIOS":path2
+                    }
+                ]
+                } 
+            ) ;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

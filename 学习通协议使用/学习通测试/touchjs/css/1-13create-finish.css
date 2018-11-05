@@ -1,0 +1,8 @@
+.container main .upload-box .little-add {
+  position: absolute;
+  right: .3rem;
+  bottom: .2rem;
+  width: .8rem;
+  height: .8rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,167 @@
+.container header {
+  box-shadow: none;
+}
+.container main .work-list .work-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 1.28rem;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  height: 0.88rem;
+  line-height: 0.88rem;
+  text-align: center;
+  z-index: 2;
+}
+.container main .work-list .work-nav li {
+  float: left;
+  width: 20%;
+}
+.container main .work-list .work-nav li a {
+  font-size: 0.28rem;
+  color: #2b333b;
+  font-weight: bold;
+}
+.container main .work-list .work-nav li a.active {
+  color: #f01414;
+}
+.container main .work-list .work-nav .time {
+  position: relative;
+}
+.container main .work-list .work-nav .time img {
+  width: 0.16rem;
+  height: 0.24rem;
+  margin-left: 0.1rem;
+  vertical-align: middle;
+}
+.container main .work-list .work-nav .time:after {
+  content: "";
+  position: absolute;
+  left: 0rem;
+  top: 0.24rem;
+  width: 0.01rem;
+  height: 0.4rem;
+  background: #d9dde1;
+}
+.container main .work-list .content {
+  margin-top: 2.16rem;
+}
+.container main .work-list .content .text-content {
+  border-bottom: 0.2rem solid #f8f8f8;
+}
+.container main .work-list .content .text-content .title {
+  position: relative;
+  height: 1.32rem;
+}
+.container main .work-list .content .text-content .title:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.3rem;
+  right: 0;
+  border-bottom: 1px solid #f1f1f1;
+  transform: scaleY(0.5);
+}
+.container main .work-list .content .text-content .title .ava {
+  margin: 0.3rem 0.16rem 0 0.3rem;
+}
+.container main .work-list .content .text-content .title .ava img {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+}
+.container main .work-list .content .text-content .title .title-right {
+  margin-top: 0.3rem;
+}
+.container main .work-list .content .text-content .title .title-right h4 {
+  font-size: 0.28rem;
+  color: #2b333b;
+  font-weight: normal;
+  line-height: 0.5rem;
+}
+.container main .work-list .content .text-content .title .title-right p {
+  color: #b7bbbf;
+  line-height: 0.24rem;
+}
+.container main .work-list .content .text-content .title .title-right p span {
+  margin-right: 0.1rem;
+}
+.container main .work-list .content .text-content .title .title-right p b {
+  font-weight: normal;
+}
+.container main .work-list .content .text-content .middle h4 {
+  font-size: 0.32rem;
+  color: #2b333b;
+  padding: 0.1rem 0.3rem;
+  line-height: 0.52rem;
+}
+.container main .work-list .content .text-content .middle .matter {
+  font-size: 0.28rem;
+  color: #71777d;
+  line-height: 0.44rem;
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+}
+.container main .work-list .content .text-content .bot {
+  padding: 0.3rem 0;
+  box-sizing: border-box;
+}
+.container main .work-list .content .text-content .bot li {
+  float: left;
+  margin-left: 0.3rem;
+}
+.container main .work-list .content .text-content .bot li img {
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.24rem;
+  vertical-align: middle;
+}
+.container main .work-list .content .text-content .bot li span {
+  font-size: 0.24rem;
+  color: #2b333b;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.container main .work-list .content .video-content .middle .video {
+  margin: 0 0.3rem;
+  width: 6.9rem;
+  height: 1rem;
+  background: #f8f8f8;
+  border-radius: 4px;
+}
+.container main .work-list .content .video-content .middle .video .video-img {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: url("../img/speaker.png") no-repeat left center;
+  background-size: 100% 100%;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+}
+.container main .work-list .content .video-content .middle .video .video-img .play {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+}
+.container main .work-list .content .video-content .middle .video .video-text {
+  margin-top: 0.18rem;
+  margin-left: 0.2rem;
+}
+.container main .work-list .content .video-content .middle .video .video-text h5 {
+  font-size: 0.28rem;
+  color: #71777d;
+  font-weight: normal;
+}
+.container main .work-list .content .video-content .middle .video .video-text span {
+  font-size: 0.24rem;
+  color: #b7bbbf;
+}
+.container main .work-list .content .audio-content .middle .video .video-img {
+  background-image: none;
+}
+.container main .work-list .content .audio-content .middle .video .video-img .audio-play {
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+}

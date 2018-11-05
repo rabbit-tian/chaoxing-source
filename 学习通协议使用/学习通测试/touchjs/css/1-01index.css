@@ -1,0 +1,206 @@
+body,
+html {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+.container header .head-con:after {
+  display: none;
+}
+.container main {
+  padding-top: 2.28rem;
+}
+.container main .add {
+  position: fixed;
+  bottom: 0.8rem;
+  right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #f01414;
+  box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  border-radius: 50%;
+}
+.container main .add a {
+  width: 100%;
+  height: 100%;
+}
+.container main .add:after {
+  position: absolute;
+  left: 0.3rem;
+  top: 0.47rem;
+  content: "";
+  width: 0.42rem;
+  height: 0.06rem;
+  background: #fff;
+  border-radius: 1rem;
+}
+.container main .add:before {
+  position: absolute;
+  left: 0.47rem;
+  top: 0.3rem;
+  content: "";
+  width: 0.06rem;
+  height: 0.42rem;
+  background: #fff;
+  border-radius: 1rem;
+}
+.container main .switch-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 1.28rem;
+  z-index: 2;
+  background-color: #fff;
+}
+.container main .switch-box .line {
+  position: absolute;
+  left: 0;
+  bottom: 0.1rem;
+  width: 25%;
+  height: 0.06rem;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+}
+.container main .switch-box .line .line-red {
+  height: 0.06rem;
+  border-radius: 1rem;
+  background: #f01414;
+}
+.container main .switch-box .switch {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, 0.06);
+}
+.container main .switch-box .switch:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #d9dde1;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+.container main .switch-box .switch li {
+  float: left;
+  width: 25%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+.container main .switch-box .switch li a {
+  font-size: 0.32rem;
+  color: #2b333b;
+  font-weight: bold;
+}
+.container main .switch-box .switch li a.active {
+  color: #f01414;
+}
+.container main .content .matter {
+  padding: .3rem 0.3rem .1rem .3rem;
+  box-sizing: border-box;
+}
+.container main .content .matter .panel {
+  margin-bottom: 0.2rem;
+  background: #ffffff;
+  box-shadow: 0 0 0.2rem 0 rgba(43, 51, 59, 0.1);
+  border-radius: .1rem;
+}
+.container main .content .matter .panel .panel-img {
+  position: relative;
+}
+.container main .content .matter .panel .panel-img img {
+  width: 6.9rem;
+  height: 3.3rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.container main .content .matter .panel .panel-img .msg {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  width: 0.8rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.2rem;
+  font-weight: 300;
+  background: rgba(9, 163, 132, 0.9);
+  box-shadow: 0 0 0.08rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+.container main .content .matter .panel .panel-img .msg.timeout {
+  background-color: rgba(240, 20, 20, 0.8);
+}
+.container main .content .matter .panel .panel-img .msg.end {
+  background-color: rgba(43, 51, 59, 0.8);
+}
+.container main .content .matter .panel .panel-img .time {
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  width: 3.17rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.24rem;
+  font-weight: 300;
+  opacity: 0.7;
+  background: #116ae4;
+  box-shadow: 0 0 0.08rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0 1rem 1rem 0;
+}
+.container main .content .matter .panel .title {
+  position: relative;
+  margin: 0.1rem .3rem 0.2rem .3rem;
+}
+.container main .content .matter .panel .title b {
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 0.8rem;
+  height: 0.32rem;
+  line-height: 0.32rem;
+  text-align: center;
+  border: 1px solid #ff660d;
+  border-radius: 2px;
+  color: #ff660d;
+  font-weight: 300;
+  font-size: 0.2rem;
+}
+.container main .content .matter .panel .title b.joined {
+  color: #116AE4;
+  border-color: #116AE4;
+}
+.container main .content .matter .panel .title h3 {
+  font-size: 0.32rem;
+  color: #2b333b;
+  line-height: 0.52rem;
+  text-indent: 1rem;
+  overflow: hidden;
+}
+.container main .content .matter .panel .detail {
+  padding: 0 .3rem .3rem .3rem;
+}
+.container main .content .matter .panel .detail img {
+  width: 0.32rem;
+  height: 0.32rem;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.container main .content .matter .panel .detail span {
+  font-size: 0.24rem;
+  color: #71777d;
+  vertical-align: middle;
+}
+.container main .content .matter .panel .detail .pv img {
+  width: .3rem;
+  height: .3rem;
+}
+.container main .content .wait,
+.container main .content .pass,
+.container main .content .release {
+  display: none;
+}

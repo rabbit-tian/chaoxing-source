@@ -1,0 +1,42 @@
+.container {
+  .footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 0.98rem;
+    line-height: 0.98rem;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 -0.04rem 0.08rem 0 rgba(0, 0, 0, 0.04);
+    li {
+      position: relative;
+      float: left;
+      width: 50%;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0.24rem;
+        height: 0.5rem;
+        width: 1px;
+        opacity: 0.4;
+        background: #b7bbbf;
+      }
+      &:last-of-type {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        font-size: 0.36rem;
+        color: #2b333b;
+        text-align: center;
+        font-weight: bold;
+        &.issure {
+          color: #116ae4;
+        }
+      }
+    }
+  }
+}

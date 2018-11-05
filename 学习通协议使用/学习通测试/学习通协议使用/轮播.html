@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+  />
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <title>红苹果幼儿园</title>
+  <script src="js/responsive-1.0.js"></script>
+</head>
+
+<body>
+  <header class="head-pink">
+    <div class="head-signal"></div>
+    <div class="head-con">
+      <a href="" class="head-return">
+        <img src="images/return.png" alt="">
+      </a>
+      <span>学习通调试</span>
+    </div>
+  </header>
+
+
+  <div class="main" id="main">
+    <input type="button" value="查看图片" onclick="seeImg()" />
+  </div>
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/mobileVersion.js"></script>
+  <script src="js/base.js"></script>
+  <script src="js/CXJSBridge.js"></script>
+  <script src="js/app.utils.js"></script>
+  <script type="text/javascript">
+
+    function seeImg() {
+        var op = {"showIndex":0,"imageUrls":[{"imageUrl":"http://p.ananas.chaoxing.com/star3/origin/56f22bd4e4b0578413c5d02e.jpg?rw=640&rh=182"},{"imageUrl":"http://img1.16q.cn/a56626a15a1c2cc92d0b0972e3d086ba"},{"imageUrl":"http://www.baidu.com/img/bd_logo1.png"}] };
+        // var op = { "showIndex": 0, "imageUrls": [{ "imageUrl": "http://mobile.ctld.chaoxing.com/certificate/5166546242.png?t=123" }] };
+        jsBridge.postNotification('CLIENT_PREVIEW_IMAGES', op);
+      }
+  </script>
+
+</body>
+
+</html>

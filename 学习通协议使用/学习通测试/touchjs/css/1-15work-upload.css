@@ -1,0 +1,61 @@
+.container {
+  margin-top: 1.28rem;
+}
+.container header {
+  box-shadow: 0 0.02rem 0.08rem 0 rgba(0, 0, 0, 0.06);
+}
+.container main .panel .work-title {
+  border-top: 0.2rem solid #f8f8f8;
+}
+.container main .panel .work-title h4 {
+  position: relative;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.3rem;
+  color: #001500;
+  padding-left: 0.3rem;
+}
+.container main .panel .work-title h4:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #f1f1f1;
+  transform: scaleY(0.5);
+}
+.container main .panel .work-title h4 span {
+  color: #f01414;
+}
+.container main .panel .work-title textarea {
+  width: 100%;
+  height: 1.4rem;
+  padding: 0 0.3rem;
+  margin: 0.3rem 0;
+  box-sizing: border-box;
+  font-size: 0.32rem;
+  color: #2b333b;
+  line-height: 0.52rem;
+}
+.container main .panel .work-title textarea::placeholder {
+  font-size: 0.32rem;
+  color: #b7bbbf;
+}
+.container main .panel .work-handle {
+  border-bottom: 0;
+}
+.container main .panel .work-handle .handle {
+  margin: 1.2rem 0;
+}
+.container main .panel .work-handle .handle img {
+  width: 1.28rem;
+  height: 1.28rem;
+  margin-left: 3.1rem;
+  margin-bottom: .4rem;
+}
+.container main .panel .work-handle .handle p {
+  font-size: .24rem;
+  color: #b7bbbf;
+  text-align: center;
+  line-height: .5rem;
+}

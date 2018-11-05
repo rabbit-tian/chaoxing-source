@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+  />
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <title>可修改日历</title>
+  <script src="js/responsive-1.0.js"></script>
+  <link rel="stylesheet" href="./laydate/theme/default/laydate.css">
+</head>
+<body>
+  <input type="text" id="selectTimeStart" value="请选择">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="./laydate/laydate.js"></script>
+  <script src="js/mobileVersion.js"></script>
+  <script>
+      // 时间控件
+        laydate.render({
+            elem: 'selectTimeStart'
+            , position: 'static'
+          });
+  </script>
+</body>
+</html>

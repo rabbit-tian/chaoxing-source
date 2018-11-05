@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=0.5, maximum-scale=1, user-scalable=yes" />
+    <meta charset="utf-8">
+
+
+    <title>CXJSBridge2</title>
+    <script type="text/javascript" src="/res/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="http://mc.m.5read.com/CXJSBridge.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+welcome CXJSBridge2<br /><br />
+
+<input type="button" value="href"   onclick="return skip2()"  />&nbsp;&nbsp;
+window.location.href = url;
+<br /><br />
+<input type="button" value="href"   onclick="return skip22()"/>&nbsp;&nbsp;
+jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'CXJSBridge3', 'loadType':'0'  ,'webUrl':url+"#INNER",'toolbarType':'2'});
+<br /><br />
+
+<input type="button" value="href"   onclick="return skip3()"/>&nbsp;&nbsp;
+jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'CXJSBridge3', 'loadType':'1'  ,'webUrl':url,'toolbarType':'1'});
+<br /><br />
+<input type="button" value="返回进行刷新页面"   onclick="return needRefresh()"/>&nbsp;&nbsp;
+注:必须是用loadtype=1这种加载新视图的方式来返回刷新，客户端才会在返回的时候进行通知。
+<br /><br />
+
+<input type="button" value="返回进行传递数据"   onclick="return sendmsg()"  />&nbsp;&nbsp;
+注:必须是用loadtype=1这种加载新视图的方式来返回刷新，客户端才会在返回的时候进行通知。
+<br /><br />
+
+自动获取焦点:<input id="sw"   />
+<br /><br />
+
+<input type="button" value="直播"   onclick="return live()"  />&nbsp;&nbsp;
+jsBridge.postNotification("CLIENT_OPEN_LIVE_NATIVEUI", {"showInvite":"1","source":"19"} ) ;
+<br /><br />
+
+<input type="button" value="上传/云盘"   onclick="return yunpan()"  />&nbsp;&nbsp;
+jsBridge.postNotification("CLIENT_SELECT_CLOUDRES", {} ) ;
+<br /><br />
+
+<input type="button" value="上传图片"   onclick="return openPhoto('3')"  />&nbsp;&nbsp;
+jsBridge.postNotification("CLIENT_CHOOSE_IMAGE", {camare:"3"} ) ;
+<br /><br />
+<input type="button" value="上传图片"   onclick="return openPhoto('5')"  />&nbsp;&nbsp;
+jsBridge.postNotification("CLIENT_CHOOSE_IMAGE", {camare:"5"} ) ;
+<br /><br />
+
+
+</body>
+
+
+
+
+<script>
+
+    //客户端加载完资源后会自动调用_jsBridgeReady()方法，所以原来放到onload方法，并且和客户端协议有关的
+    //那些js方法，都要转到_jsBridgeReady()来调用，这样才能确保调用成功。
+    //_jsBridgeReady方法可以理解为jquery的onready方法
+    function _jsBridgeReady(){
+        //定制顶部条右侧菜单--在_jsBridgeReady（）里调用，为了是让客户端将资源协议准备好，再通知客户端在顶部条右侧加菜单，这样才能添加成功。
+        jsBridge.postNotification('CLIENT_CUSTOM_MENU',{"show":1,"icon":"http://m.chaoxing.com/images/discover/mobilediscover/share.png?t=423","menu":"","option":"zhuanfaMethod()","children":[],"index":0,"width":22,"height":22});
+        jsBridge.postNotification('CLIENT_CUSTOM_MENU',{"show":1,"icon":"http://m.chaoxing.com/images/discover/mobilediscover/share.png?t=423","menu":"","option":"zhuanfaMethod()","children":[],"index":1,"width":22,"height":22});
+
+    }
+
+    function zhuanfaMethod(){
+        //转发不同类型的资源时候，里面的参数格式是不一样的，例如转发专题，期刊，网页，笔记，话题，小组
+        //转发网页实例
+        var resUrl = "http://ency.chaoxing.com/mdetail/AEEB157A5B917512EAF35AAA9E6DC536";//网页的url
+        var resLogo = "http://m.chaoxing.com/images/find/mag.jpg"; //logo
+        var resUid = "52fa55d3df2ade59527bae0c94d31971"//  //md5(resUrl)
+        var content = {"resTitle":"转发网页的标题","resUrl":resUrl,"resLogo":resLogo,"resUid":resUid,"toolbarType":2}
+        jsBridge.postNotification("CLIENT_TRANSFER_INFO", {"cataid": 100000015,"content": content});
+
+    }
+
+
+    function skip2(){
+        var url = "CXJSBridge3.html";
+        window.location.href = url;
+    }
+    function skip22(){
+        var url = "http://learn.chaoxing.com/html/test/CXJSBridge3.html";
+        jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'CXJSBridge3', 'loadType':'0'  ,'webUrl':url+"#INNER",'toolbarType':'2'});
+    }
+
+    function skip3(){
+        var url = "http://learn.chaoxing.com/html/test/CXJSBridge3.html";
+        jsBridge.postNotification('CLIENT_OPEN_URL', {'title':'CXJSBridge3', 'loadType':'1'  ,'webUrl':url,'toolbarType':'1'});
+    }
+
+
+    $(function(){
+        $("#sw").focus();
+    });
+
+    function needRefresh(){
+        jsBridge.postNotification("CLIENT_REFRESH_STATUS", {"status":1} ) ;
+    }
+
+    function sendmsg(){
+        jsBridge.postNotification('CLIENT_WEB_EXTRAINFO', {"name":"zhangsan","age":18}) ;
+        //jsBridge.postNotification('CLIENT_EXIT_LEVEL', {}) ;
+    }
+
+
+
+
+    function live(){
+        jsBridge.postNotification("CLIENT_OPEN_LIVE_NATIVEUI", {"showInvite":"1","source":"19"} ) ;
+    }
+
+    //绑定返回刷新事件
+    try{
+        jsBridge.bind('CLIENT_SELECT_CLOUDRES', function(object){
+            alert("进入CLIENT_SELECT_CLOUDRES回调");
+            alert(JSON.stringify(object));
+        });
+    }catch(e){}
+    try{
+        jsBridge.bind('CLIENT_WEB_EXTRAINFO', function(object){
+            alert("进入CLIENT_WEB_EXTRAINFO回调");
+            alert(JSON.stringify(object));
+        });
+    }catch(e){}
+
+    function yunpan(){
+        var folderEnable = 1;
+        var titleClick = 0; //
+        var maxSize = 3;
+        var supports = ["ppt","xls","doc","mp3","mp4","txt","png","jpg"];
+        var opts = {"folderEnable":folderEnable,"maxSize":maxSize,"titleClick":titleClick,"supports":supports};
+        jsBridge.postNotification("CLIENT_SELECT_CLOUDRES", opts ) ;
+    }
+
+
+    var jsBridge_cmd_handlers = {}; //避免重复绑定回调方法
+    function openPhoto(camare){
+        var param = {camare:camare};	//3是可以选择相册，=5的话只能拍照，不能从相册中选择
+        if (!jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"]) {
+            var handler = jsBridge_cmd_handlers["CLIENT_CHOOSE_IMAGE_RESULT"] = function (object) {
+                if (object && object.files) {
+                    var imagedata = jQuery.parseJSON(object.files);
+                    for(var i = 0; i<imagedata.length; i++){
+                        if(i < (imagedata.length-1) ){
+                            continue;
+                        }
+                        var imageName=imagedata[i].name;
+                        var objectid=imagedata[i].objectid;
+                        //图片地址需要拼接，原图地址是http://p.ananas.chaoxing.com/star3/origin/objectid.jpg
+                        //也可以裁剪，比如裁剪成200*200的图，裁剪地址是：http://p.ananas.chaoxing.com/star3/200_200c/objectid.jpg
+                        //http://p.ananas.chaoxing.com/star3/200_200f/objectid.jpg
+                        alert(JSON.stringify(object));
+
+                        //拿到了图片地址了，之后进行下边的逻辑
+
+
+
+                    }
+                }
+            };
+            //绑定回调
+            try {
+                jsBridge.bind('CLIENT_CHOOSE_IMAGE_RESULT',handler);
+            } catch (e) {
+                alert(e);
+            }
+        }
+        jsBridge.postNotification('CLIENT_CHOOSE_IMAGE',param);
+    }
+
+
+
+
+</script>
+</html>

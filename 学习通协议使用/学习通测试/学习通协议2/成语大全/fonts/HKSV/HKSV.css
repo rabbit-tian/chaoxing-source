@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "HKSV";
+    src: url("HKSV.eot"); /* IE9 */
+    src: url("HKSV.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("HKSV.woff") format("woff"), /* chrome、firefox */
+    url("HKSV.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("HKSV.svg#HKSV") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

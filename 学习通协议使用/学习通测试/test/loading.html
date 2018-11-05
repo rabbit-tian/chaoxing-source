@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,html{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .loading-pic{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .pic-box{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .loading-pic h3{
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .loading-pic img{
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loading-pic">
+    <div class="pic-box">
+      <h3>统计汇总需要3分钟，请耐心等待。等待期间请不要切换到其他模块。</h3>
+      <img src="./loading1.svg" alt="">
+    </div>
+  </div>
+</body>
+</html>

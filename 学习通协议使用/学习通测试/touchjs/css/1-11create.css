@@ -1,0 +1,51 @@
+.mark {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.4;
+  background: #2b333b;
+  z-index: 102;
+}
+.pai {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -0.01rem;
+  height: 5.76rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 -0.04rem 0.08rem 0 rgba(0, 0, 0, 0.04);
+  z-index: 103;
+}
+.pai .pai-list {
+  margin: 1.3rem 0;
+}
+.pai .pai-list li {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+}
+.pai .pai-list li img {
+  display: block;
+  width: 1.28rem;
+  height: 1.28rem;
+  margin-left: 0.6rem;
+  margin-bottom: 0.26rem;
+}
+.pai .pai-list li span {
+  font-size: 0.28rem;
+  color: #71777d;
+  font-weight: 300;
+}
+.pai .pai-list li span.dredge {
+  color: #d9dde1;
+}
+.pai .pai-cancel {
+  width: 0.46rem;
+  height: 0.46rem;
+  display: inline-block;
+}

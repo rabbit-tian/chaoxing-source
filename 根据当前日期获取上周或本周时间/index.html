@@ -19,10 +19,11 @@
     var now = new Date(); //当前日期
 
     var nowDayOfWeek = now.getDay() - 1; //今天本周的第几天
+    console.log(nowDayOfWeek);
     var nowDay = now.getDate(); //当前日
     var nowMonth = now.getMonth(); //当前月
     var nowYear = now.getYear(); //当前年
-    nowYear += (nowYear < 2000) ? 1900 : 0; //
+    nowYear += (nowYear < 2000) ? 1900 : 0; 
     var lastMonthDate = new Date(); //上月日期
     lastMonthDate.setDate(1);
     lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);
@@ -75,6 +76,25 @@
     function getQuarterStartDate() { var quarterStartDate = new Date(nowYear, getQuarterStartMonth(), 1); return formatDate(quarterStartDate); }
     //或的本季度的结束日期
     function getQuarterEndDate() { var quarterEndMonth = getQuarterStartMonth() + 2; var quarterStartDate = new Date(nowYear, quarterEndMonth, getMonthDays(quarterEndMonth)); return formatDate(quarterStartDate); }
+
+
+    // 获取昨天，今天，明天，后台的时间（dayCount = -1,0,1,2）
+      function getDateStr(dayCount) {
+        if (null == dayCount) {
+          dayCount = 0;
+        }
+        var dd = new Date();
+        dd.setDate(dd.getDate() + dayCount);//设置日期
+        var y = dd.getFullYear();
+        var m = double(dd.getMonth() + 1);//获取当前月份的日期
+        var d = double(dd.getDate());
+        return y + "-" + m + "-" + d;
+
+        // 时间补零操作
+        function double(time) {
+          return time < 10 ? "0" + time : time + "";
+        }
+      }
   </script>
 </body>
 

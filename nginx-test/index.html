@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+    $.ajax({
+      url: "/activity/public/testget?fid=1385&uid=28900238",
+      method:"post",
+      success:function (data) {
+        console.log(data);
+      }
+    })
+
+
+
+    /****
+      1. 用 brew 下载 nginx
+      2. command + shift + g 输入 ’/usr/local/etc/nginx‘  快速打开 nginx文件   
+      3. 找到 nginx.conf 文件  进行配置
+
+        server{
+              listen       8850; // 请求端口
+              server_name  localhost;
+
+              location / {
+                  root   /Users/tiantian/Desktop;
+
+                  //  nginx-test/index.html这个就是请求数据的页面路径
+                  index  nginx-test/index.html index.htm;
+              }
+
+              # /activity/public/testget?fid=1385&uid=28900238
+
+              # 如果是根目录 就 location / {proxy_pass  http://120.131.6.133.cn/}
+              location /activity/ {
+                  add_header 'Access-Control-Allow-Origin' '*';
+                  add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+                  add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+                  add_header 'Access-Control-Expose-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+                  proxy_pass  http://120.131.6.133:8086/activity/; #跨域地址
+              }
+
+              #error_page  404              /404.html;
+
+              # redirect server error pages to the static page /50x.html
+              #
+              error_page   500 502 503 504  /50x.html;
+              location = /50x.html {
+                  root   html;
+              }
+          }
+
+        4. sudo nginx -s stop  停止所有端口线程
+            $ lsof -i:8869  查看 8869这个端口
+        5. nginx 启动当前端口线程
+        6. 启动后  网址栏 输入  localhost:设置的端口号访问即可
+    
+    
+    
+    
+    ***/
+  
+  
+  </script>
+</body>
+</html>

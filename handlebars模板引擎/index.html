@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">我是handlebars模板哦</div>
+      <!-- 基本语法 -->
+      <div class="panel1"></div>
+      <!-- Block表达式 对象中包含 数组的数据结构的渲染 -->
+      <div class="panel2"></div>
+      <!-- Handlebars的内置块表达式 Block helper   数据结果 数组-->
+      <div class="panel3"></div>
+      <div class="panel4"></div>
+      <div class="panel5"></div>
+      <div class="panel6"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./handlebars-v4.0.12.js"></script>
+
+    <!-- 基本胡子语法 -->
+    <script id="data-box1" type="text/x-handlebars-template">
+      <div class="person">
+          <h2>{{name}}</h2>
+          <h3>{{age}}</h3>
+          <div class="email"><a href="mailto:{{email}}">{{email}}</a></div>
+          
+          <P>{{formatnumber num}}</P>
+      </div>
+    </script>
+
+    <!-- block表达式  对象中包含 数组的数据结构的渲染-->
+    <script id="data-box2" type="text/x-handlebars-template">
+      <ul class="arr">
+      {{#pepArr}}
+          <li>
+            <h3>{{name}}</h3>
+            <span>{{age}}</span>
+          </li>
+      {{/pepArr}}
+      </ul>
+    </script>
+
+    <script id="data-box3" type="text/x-handlebars-template">
+      <ul class="arr">
+        {{#each arr}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script id="data-box4" type="text/x-handlebars-template">
+      {{#if list}}
+      <ul class="else-if">
+          {{#each list}}
+            <li>{{this}}</li>
+          {{/each}}
+      </ul>
+      {{else}}
+        <p>{{error}}</p>
+      {{/if}}
+    </script>
+
+    <script id="data-box5" type="text/x-handlebars-template">
+      <div class="hobby">
+        <h2>{{title}}</h2>
+        {{#with hobbies}}
+          <p>{{sport}}</p>
+          <p>{{eat}}</p>
+          <!-- ！注释 -->
+          <p>{{!drink}}</p> 
+
+          <!-- 找路径 -->
+          <p>{{../colors.sport}}</p>
+        {{/with}}
+      </div>
+    </script>
+
+    <script id="data-box6" type="text/x-handlebars-template">
+      <div class="hobby">
+        <h2>{{title}}</h2>
+        <p>{{hobbies.sport}}</p>
+        <p>{{hobbies.eat}}</p>
+      </div>
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // 1. 基本胡子语法
+        var template1 = Handlebars.compile($("#data-box1").html());
+        var data1 = {
+          name: "Tiantian",
+          age: 20,
+          email: "1019610881@qq.com",
+          num: 253453454
+        };
+        $(".panel1").html(template1(data1));
+        
+        // 2. block表达式  对象中包含 数组的数据结构的渲染
+        var template2 = Handlebars.compile($('#data-box2').html())
+        var data2 = {
+          pepArr:[
+            {name: 'tom',age: 18},
+            {name: 'jack',age: 20},
+            {name: 'rose',age: 21},
+          ]
+        }
+        $('.panel2').html(template2(data2))
+
+        // 3. Handlebars的内置块表达式 each block helper   数据结果 数组
+        var template3 = Handlebars.compile($('#data-box3').html())
+        var data3 = {
+          arr: ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+        };
+        $('.panel3').html(template3(data3));
+
+        // 4. if else block helper  这里{{#if}}判断是否存在list数组，如果存在则遍历list，如果不存在输出错误信息
+        var template4 = Handlebars.compile($('#data-box4').html())
+        var data4 = {
+          list: ['111', '222', '3333'],
+          "error": "数据取出错误",
+        };
+        $('.panel4').html(template4(data4));
+        
+        // 5. with block helper   数据对象里包含  对象块的数据
+        var template5 = Handlebars.compile($('#data-box5').html())
+        var data5 = {
+          title: "我叫田甜",
+          hobbies: {
+            sport: 'byeycle',
+            eat: 'icecream',
+            drink: "milktea",
+          },
+          colors: {
+            sport: 'red',
+            eat: 'blue',
+          }
+        };
+        $('.panel5').html(template5(data5));
+
+
+        // 6. 支持嵌套的路径
+        var template6 = Handlebars.compile($('#data-box6').html())
+        var data6 = {
+          title: "我叫田甜111",
+          hobbies: {
+            sport: 'byeycle111',
+            eat: 'icecream111',
+          },
+          
+        };
+        $('.panel6').html(template6(data6));
+
+
+        // 自定义 helper  千分位
+        Handlebars.registerHelper('formatnumber', function (num, options) {
+          num = num + '';
+          return num.replace(/(?=(?!^)(?:\d{3})+(?:\.|$))(\d{3}(\.\d+$)?)/g, ',$1');
+        });
+
+      });
+    </script>
+  </body>
+</html>

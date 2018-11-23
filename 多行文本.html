@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      .single {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 
+        1.多行文本
+          （利用被废弃的webkit私有属性实现，可在移动端使用）
+
+        2.多行省略号在a链接中使用显示有bug
+          将需要省略号的文本不直接用a标签包裹。或是在a标签内再嵌套一层。
+       */
+
+      .multi {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="single">
+        我是单行文本我是单行文本我是单行文本我是单行文本我是单行文本我是单行文本我是单行文本
+      </div>
+
+      <div class="multi">
+        我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本我是多行文本
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script></script>
+  </body>
+</html>

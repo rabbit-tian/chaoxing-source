@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+  <script>
+    var p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // 1. Promise 状态变更后不可逆 (只能执行一个 resolve 或 reject)
+        resolve('success');
+        reject('fail');
+      }, 100);
+    })
+
+    p.then((data) => {
+      console.log('成功1'+ data);
+    }, (error) => {
+      console.log('失败1'+ error);
+    })
+
+    // 2. 一个实例可以被 then 多次
+    p.then((data) => {
+      console.log('成功2'+ data);
+    },(error) => {
+      console.log('失败2' + error);
+    })
+
+
+    // 3. then方法是异步可以被链式调用（返回新的promise）
+    p.then((data) => {
+      console.log('成功3' + data);
+    }, (error) => {
+      console.log('失败3' + error);
+    }).then((data) => {
+      console.log('链式调用成功2'+ data); // undefined
+      // 为什么返回的是 undefined？ 如果用户不显示的返回一个值，那么默认会返回 undefined
+    },(error) => {
+      console.log('链式调用失败2'+ error);
+    })
+
+    // 4. then 中用户可以显示的返回 promise，且可以嵌套多层
+    p.then(data => {
+      console.log('成功4' + data);
+
+      return new Promise ((resolve,reject) => {
+        resolve(new Promise((resolve,reject) => {
+          resolve('ok')
+        }))
+      })
+    },error => {
+      console.log('失败'+ error);
+    }).then(data => {
+      console.log('链式调用成功4' + data); // ok 有返回值
+    },error => {
+      console.log('链式调用失败4' + error);
+    })
+
+  
+  </script>
+</body>
+</html>

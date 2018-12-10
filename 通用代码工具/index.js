@@ -23,5 +23,28 @@ const util = {
       if (sec < 10) sec = "0" + sec;
       return hour + ":" + min + ":" + sec;
     }
+  },
+  check: {
+    // 判断是否是数组
+    isArray (arr) {
+      if (Array.isArray(arr))
+        return !!arr.length
+    },
+    // 手机号码验证
+    testPhoneNum (num) {
+      if (!num)
+        return '0'
+      let phone = /^1[34578]\d{9}$/
+      if (phone.test(num))
+        return '1'
+    },
+    // 四位验证码验证
+    testCode (num) {
+      if (!num)
+        return '0'
+      let code = /^\d{4}$/
+      if (code.test(num))
+        return '1'
+    }
   }
 };

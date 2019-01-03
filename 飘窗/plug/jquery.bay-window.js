@@ -61,11 +61,13 @@
           position.top = max_t;
         }
         //that.css({left:position.left, top:position.top});
-        that.animate({left:position.left, top:position.top}, time);//改用jquery动画函数使其更加平滑
-        mvtid = setTimeout(move, time);//递归调用，使飘窗连续运动
+        that.animate({left:position.left, top:position.top}, time,function () {
+          mvtid = setTimeout(move, time);//递归调用，使飘窗连续运动
+        });//改用jquery动画函数使其更加平滑
+        // mvtid = setTimeout(move, time);//递归调用，使飘窗连续运动
       }
       move();//触发动作
-      that.on('mouseenter', function(){ clearTimeout(mvtid) });//添加鼠标事件
+      that.on('mouseenter', function () { clearTimeout(mvtid); that.stop(); });//添加鼠标事件
       that.on('mouseleave', function(){ move() });
     });
   }; //end plugin definition

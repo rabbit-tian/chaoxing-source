@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>video5.0</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link href="css/video-js.min.css" rel="stylesheet" />
+    <script src="js/video.min.js"></script>
+    <style lang="">
+      .list li{
+        float: left;
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin: 4px;
+        background-color: yellow;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <video muted controls="controls" autoplay="autoplay" loop="loop" id="my-player" class="video-js vjs-big-play-centered"
+      style="width: 1000px;height: 500px;">
+      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+      </source>
+    </video>
+
+
+    <ul class="list">
+      <li attrVideo="http://vjs.zencdn.net/v/oceans.mp4">点击视频1</li>
+      <li attrVideo="http://s1.ananas.chaoxing.com/video/cf/34/65/89fd5123a42829628bc19890e5a04670/sd.mp4?at_=1547112359978&amp;ak_=7e40545c142db75c8e7cb9529fd9a8f7&amp;ad_=2c2789f5c021957042a6b6c0174832ea">点击视频2</li>
+      <li attrVideo="http://vjs.zencdn.net/v/oceans.mp4">点击视频3</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+      $('.list li').on('click',function () {
+        var videoAddress = $(this).attr("attrVideo");
+        var Player = videojs("my-player");  //初始化视频
+        Player.src(videoAddress);  //重置video的src
+        Player.load(videoAddress);  //使video重新加载
+      })
+     
+    </script>
+  </body>
+</html>

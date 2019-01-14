@@ -1,0 +1,85 @@
+/* CSS Document */
+body,
+form,
+textarea,
+select,
+option,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dt,
+dd,
+menu,
+blockquote,
+fieldset,
+legend,
+button,
+input,
+hr,
+pre {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "arial,helvetica,sans-serif";
+  font-size: 12px;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,i,b,strong{
+  font-weight: normal;
+}
+ul,
+ol,
+img {
+  border: 0px;
+}
+li {
+  list-style-type: none;
+}
+input,
+select,
+textarea {
+  vertical-align: middle;
+  outline: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+input[type="button"]:hover {
+  cursor: pointer;
+}
+.clear {
+  clear: both;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title>红苹果幼儿园</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/responsive-1.0.js"></script>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        .list li div{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+        }
+        .list li span{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="list">
+            <li id="item11">
+                <div></div>
+                <span>0</span>
+            </li>
+            <li id="item13">
+                <div></div>
+                <span>0</span>
+            </li>
+            <li id="item14">
+                <div></div>
+                <span>0</span>
+            </li>
+        </ul>
+    </div>
+    <script src="js/mobileVersion.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/CXJSBridge.js"></script>
+    <script src="js/app.utils.js"></script>
+    <script>
+        function _jsBridgeReady(){
+
+            try {
+                jsBridge.bind("CLIENT_SUBSCRIBE_RES", function (object) {
+                    // alert(JSON.stringify(object));
+                    // 成功打开后，发送ajax请求 ，收藏此活动
+                    if (object.status) {
+                        var num = $('#' + object.key).find('span').text();
+                        
+                        num++;
+                        $('#' + object.key).find('span').text(num);
+                        $('#' + object.key).attr("isCollect", 1);
+                    }
+                });
+
+            } catch (e) { }
+
+            try {
+                jsBridge.bind("CLIENT_REMOVE_RES", function (object) {
+                    // alert(JSON.stringify(object));
+                    // 成功取消，发送ajax请求 ，取消此活动
+                    if (object.status) {
+                        var num = $('#' + object.key).find('span').text();
+
+                        num--;
+                        $('#' + object.key).find('span').text(num);
+                        $('#' + object.key).attr("isCollect", 0);
+                    }
+                });
+            } catch (e) { }
+        }
+
+
+        
+        var fid = 11213;
+        var puid=52379735;
+        $('.list li').on('click',function () {
+            var _this = $(this);
+            
+            var id = $(this).attr("id");
+
+            // 1- 取消收藏   0- 添加收藏
+            if ($(this).attr("isCollect") == '1') {
+                jsBridge.postNotification("CLIENT_REMOVE_RES", {
+                    cataid: "100000015",
+                    key: id
+                });
+
+               
+            } else {  
+                jsBridge.postNotification("CLIENT_SUBSCRIBE_RES", {
+                    cataid: "100000015",
+                    cataName: "网址",
+                    key: id,
+                    content: {
+                        toolbarType: 2,
+                        // resTitle: title,
+                        // resUrl: methodFn.commonUrl + "4-work_list.html?id=" + id,
+                        resUid: puid,
+                        // resLogo: workSrc
+                    }
+                });
+                
+                
+            }
+        })
+
+
+        
+
+
+
+    </script>
+   
+
+</body>
+
+</html>

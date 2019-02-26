@@ -17,13 +17,27 @@
         background-color: yellow;
         cursor: pointer;
       }
+      /* .video-js .vjs-big-play-button{
+        display: block;
+      } */
+      .vjs-default-skin .vjs-big-play-button {left:50%;top:50%;}
+     
+  /* .vjs-big-play-centered .vjs-big-play-button{
+    margin-left: -1em;
+  }
+  */
+  .video-js {
+    width: 100%;
+    height: 418px;
+  } 
+      
     </style>
   </head>
 
   <body>
-    <video muted controls="controls" autoplay="autoplay" loop="loop" id="my-player" class="video-js vjs-big-play-centered">
+    <video id="my-player" controls class="video-js vjs-default-skin vjs-big-play-centered"
+      poster="./video_poster.png">
       <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-      </source>
     </video>
 
 
@@ -35,12 +49,16 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
+      var player = videojs('my-player');
+      player.play();
       $('.list li').on('click',function () {
         var videoAddress = $(this).attr("attrVideo");
-        var Player = videojs("my-player");  //初始化视频
-        Player.src(videoAddress);  //重置video的src
-        Player.load(videoAddress);  //使video重新加载
+        // var Player = videojs("my-player");  //初始化视频
+        player.src(videoAddress);  //重置video的src
+        player.load(videoAddress);  //使video重新加载
+         
       })
+      
      
     </script>
   </body>

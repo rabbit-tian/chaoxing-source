@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>video5.0</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link href="css/video-js.min.css" rel="stylesheet" />
+    <script src="js/video.min.js"></script>
+    <style lang="">
+      .list li{
+        float: left;
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin: 4px;
+        background-color: yellow;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <video x5-playsinline="" playsinline="" webkit-playsinline="" muted id="my-player" controls="controls" loop="loop"
+      controls class="video-js vjs-default-skin vjs-big-play-centered" poster="../images/video_poster.png">
+      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+    </video>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+       // 视频
+        var player = videojs('my-player');
+
+        player.on('pause', function () {
+          $('.vjs-big-play-button').show();
+        })
+        player.on('play', function () {
+          $('.vjs-big-play-button').hide();
+        })
+
+        var myPlayer = document.getElementById("my-player");
+        myPlayer.addEventListener('touchstart', function () {
+          player.pause();
+        })
+     
+    </script>
+  </body>
+</html>

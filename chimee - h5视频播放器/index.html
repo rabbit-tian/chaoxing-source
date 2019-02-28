@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link crossorigin="anonymous" integrity="sha384-W2HsO6pKwUyY9ZRuLRchttDzjKkQln46fHpBWTBpkie8pZA2jWpubkUoV0a8AEW0"
+    href="https://lib.baomitu.com/chimee-player/1.4.7/chimee-player.browser.css" rel="stylesheet">
+    <style lang="">
+      .chimee-container{
+        position: relative;
+      }
+      .time-ad{
+        background-color: transparent;
+        border:0;
+      }
+      .time-ad img{
+        display: block;
+        width: 30px;
+      }
+      .time-ad em{
+        position: absolute;
+        right: -7px;
+        top: 35px;
+        width: 60px;
+        text-align: center;
+        font-size: 12px;
+        background-color: rgba(156, 85, 85, 0.66);
+        padding: 0 3px;
+        z-index: -1;
+        border-radius: 5px;
+      }
+      .time-ad cm-pp-close{
+        display: none;
+      }
+      .time-ad cm-pp-body{
+        padding: 0;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="chimee-container">
+    <video tabindex="-1"></video>
+  </div>
+  
+  
+  <!-- <script src="https://s3.ssl.qhres.com/!fd546749/chimee-player.browser.js" type="text/javascript"></script> -->
+<script crossorigin="anonymous" integrity="sha384-ojsDbSBdmfzsQZEj8BpuiiRgb+1AH2lUxo6vmeFl9PV1rVwhX09FtTpE8qpR3wd2"
+  src="https://lib.baomitu.com/chimee-player/1.4.7/chimee-player.browser.js"></script>
+  <script>
+      // var aggdPlugin = ChimeePlayer.popupFactory({
+      //   name: 'time-ad',
+      //   className: 'time-ad',
+      //   title: false,
+      //   body: false,
+      //   // body: '<em>广告示例</em><a href="https://jia.360.cn" target="_blank"><img src="https://p.ssl.qhimg.com/t018fe4570caeb23e44.png"></a>',
+      //   // offset: '0px 10px auto auto',
+      //   // operable: false
+      // });
+      // ChimeePlayer.install(aggdPlugin);
+
+      var player = new ChimeePlayer({
+        wrapper: '.chimee-container',
+        src: 'http://chimee.org/vod/1.mp4',
+        isLive: false,
+        box: 'native',
+        autoplay: false,
+        controls: true,
+        // plugin: [aggdPlugin.name]
+      });
+  </script>
+</body>
+</html>

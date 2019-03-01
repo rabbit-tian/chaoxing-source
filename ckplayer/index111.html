@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="a1"></div>
+  <script type="text/javascript" src="/ckplayer/ckplayer.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var flashvars = {
+      f: 'http://movie.ks.js.cn/flv/other/1_0.flv',
+      c: 0,
+      i: './学习通视频导读(M)/images/video_poster.png'
+    };
+    var params = { bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent' };
+    var video = ["http://vjs.zencdn.net/v/oceans.mp4"];
+    CKobject.embed('/ckplayer/ckplayer.swf', 'a1', 'ckplayer_a1', '100%', '100%', true, flashvars, video, params);
+  </script>
+</body>
+</html>

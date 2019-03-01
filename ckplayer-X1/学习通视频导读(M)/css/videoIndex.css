@@ -1,0 +1,278 @@
+.title {
+  height: 0.98rem;
+  line-height: 0.98rem;
+  color: #333;
+  font-size: 0.36rem;
+  font-weight: bold;
+  padding-left: 0.3rem;
+}
+.videoLive .videosamplex {
+  height: 4.18rem;
+}
+.videoLive .prompt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4.18rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding-left: 1.72rem;
+  padding-top: 1.4rem;
+  box-sizing: border-box;
+}
+.videoLive .prompt h3 {
+  color: #ffffff;
+  font-size: 0.28rem;
+  font-weight: 300;
+}
+.videoLive .prompt .btns {
+  margin-top: 0.7rem;
+}
+.videoLive .prompt .btns li {
+  float: left;
+  width: 1.48rem;
+  height: 0.46rem;
+  line-height: 0.46rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.22rem;
+  border-radius: 0.24rem;
+  border: solid 0.02rem #ffffff;
+  font-weight: 300;
+}
+.videoLive .prompt .btns li:first-child {
+  margin-right: 0.9rem;
+}
+.videoLive .prompt .btns li.active {
+  border-color: #47b1f8;
+  background-color: #47b1f8;
+}
+.main {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.tabBox .tabs {
+  position: relative;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  border-bottom: solid 1px #eeeeee;
+}
+.tabBox .tabs li {
+  float: left;
+  width: 33.3333%;
+  font-size: 0.32rem;
+  text-align: center;
+  color: #5b5960;
+  padding: 0 0.2rem;
+  box-sizing: border-box;
+}
+.tabBox .tabs li.active {
+  color: #333333;
+  font-weight: bold;
+}
+.tabBox .tabs .line {
+  position: absolute;
+  left: 0;
+  bottom: -0.08rem;
+  width: 100%;
+  height: 0.08rem;
+  box-sizing: border-box;
+}
+.tabBox .tabs .line .line-red {
+  width: 1.62rem;
+  height: 0.08rem;
+  box-sizing: border-box;
+  background: #47b1f8;
+  margin-left: 0.44rem;
+}
+.tabBox .panel {
+  display: none;
+  width: 100%;
+}
+.tabBox .panel.show {
+  display: block;
+}
+.reason .bookBackground {
+  font-size: 0.28rem;
+  line-height: 0.42rem;
+  color: #5b5960;
+  padding: 0.44rem 0.3rem 0.38rem 0.3rem;
+  box-sizing: border-box;
+  border-bottom: 0.2rem solid #f5f6f8;
+}
+.reason .recommendRead {
+  margin-bottom: 0.53rem;
+}
+.reason .recommendRead .readTitle {
+  height: 0.97rem;
+  line-height: 0.97rem;
+  text-align: center;
+}
+.reason .recommendRead .readTitle h3 {
+  font-size: 0.36rem;
+  color: #333333;
+  padding-left: 0.3rem;
+}
+.reason .recommendRead .readTitle .more {
+  margin-right: 0.3rem;
+}
+.reason .recommendRead .readTitle .more span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.24rem;
+  color: #47b1f8;
+}
+.reason .recommendRead .readTitle .more img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.12rem;
+  height: 0.21rem;
+}
+.reason .recommendRead .bookLists {
+  width: 100%;
+}
+.reason .recommendRead .bookLists .swiper-container {
+  width: 100%;
+}
+.reason .recommendRead .bookLists .swiper-container .swiper-wrapper {
+  width: 100%;
+  padding-left: 0.15rem;
+  box-sizing: border-box;
+}
+.reason .recommendRead .bookLists .swiper-container .swiper-wrapper .swiper-slide {
+  position: relative;
+  width: 1.88rem;
+  margin: 0 0.15rem;
+  text-align: center;
+}
+.reason .recommendRead .bookLists .swiper-container .swiper-wrapper .swiper-slide img {
+  width: 1.88rem;
+  height: 2.41rem;
+  border-radius: 0.08rem;
+}
+.reason .recommendRead .bookLists .swiper-container .swiper-wrapper .swiper-slide h4 {
+  font-size: 0.24rem;
+  color: #333333;
+  margin-top: 0.1rem;
+}
+.reason .reasonFooter {
+  text-align: center;
+  color: #999999;
+  font-size: 0.22rem;
+  margin: 0.55rem 0 0.43rem 0;
+}
+.bookRecommend .bookRecTitle {
+  margin: 0.55rem 0.3rem 0.65rem 0.3rem;
+}
+.bookRecommend .bookRecTitle .titleLeft {
+  width: 1.96rem;
+  height: 2.52rem;
+  border-radius: 0.08rem;
+  overflow: hidden;
+  margin-right: 0.3rem;
+}
+.bookRecommend .bookRecTitle .titleLeft img {
+  width: 100%;
+  height: 100%;
+}
+.bookRecommend .bookRecTitle .titleRight .titleRightTop h3 {
+  color: #333333;
+  font-size: 0.34rem;
+}
+.bookRecommend .bookRecTitle .titleRight .titleRightTop p {
+  font-size: 0.28rem;
+  color: #999999;
+  margin-top: 0.1rem;
+}
+.bookRecommend .bookRecTitle .titleRight dl {
+  margin-top: 0.34rem;
+  color: #999999;
+  font-size: 0.24rem;
+}
+.bookRecommend .bookRecTitle .titleRight dl dt {
+  margin-bottom: 0.1rem;
+}
+.bookRecommend .bookRecMain {
+  padding: 0.65rem 0.3rem 0 0.3rem;
+  box-sizing: border-box;
+}
+.bookRecommend .bookRecMain .bookInfo {
+  margin-bottom: 0.34rem;
+  color: #5b5960;
+  font-size: 0.28rem;
+}
+.bookRecommend .bookRecMain img {
+  width: 100%;
+  height: 4.9rem;
+}
+.authorRecommend {
+  padding: 0.45rem 0.3rem 0 0.3rem;
+  box-sizing: border-box;
+}
+.authorRecommend .author img {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1.33rem;
+  height: 1.33rem;
+  border-radius: 50%;
+}
+.authorRecommend .author span {
+  display: inline-block;
+  vertical-align: bottom;
+  color: #333333;
+  font-size: 0.34rem;
+  margin-left: 0.3rem;
+  font-weight: bold;
+}
+.authorRecommend .aboutAuthor {
+  margin-top: 0.4rem;
+  color: #5b5960;
+  font-size: 0.28rem;
+  line-height: 0.44rem;
+}
+.authorRecommend .aboutAuthor p {
+  margin: 0.24rem 0;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: solid 0.02rem #f5f6f8;
+  background-color: #fff;
+  z-index: 100;
+}
+.footer li {
+  position: relative;
+  float: left;
+  width: 33.3333%;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  text-align: center;
+}
+.footer li:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0.24rem;
+  width: 0.03rem;
+  height: 0.62rem;
+  background-color: #f5f6f8;
+  border-radius: 0.04rem;
+}
+.footer li:last-of-type:after {
+  display: none;
+}
+.footer li img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.34rem;
+  height: 0.34rem;
+}
+.footer li span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #333333;
+  font-size: 0.28rem;
+  margin-left: 0.1rem;
+}

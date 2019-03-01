@@ -1,0 +1,120 @@
+/* CSS Document */
+body,
+form,
+textarea,
+select,
+option,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dt,
+dd,
+menu,
+blockquote,
+fieldset,
+legend,
+button,
+input,
+hr,
+pre {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "arial,helvetica,sans-serif";
+  font-size: 12px;
+  font-weight: normal;
+}
+ul,
+ol,
+img {
+  border: 0px;
+}
+li {
+  list-style-type: none;
+}
+input,
+select,
+textarea {
+  vertical-align: middle;
+  outline: none;
+}
+textarea{resize:none;border: none;}
+a {
+  text-decoration: none;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+
+}
+input[type="button"]:hover {
+  cursor: pointer;
+}
+.clear {
+  clear: both;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+@font-face
+{
+    font-family: "方正剪纸简体";
+    src: url('../fonts/FZJZJW.TTF')
+}
+@font-face
+{
+    font-family:"华康少女文字";
+    src: url('../fonts/华康少女文字W5(P).TTF')
+}
+@font-face
+{
+    font-family:"PingFang-Medium";
+    src: url('../fonts/PingFang-Medium.ttf')
+}
+@font-face
+{
+    font-family:"DFShaoNvW5";
+    src: url('../fonts/DFPShaoNvW5-GB.ttf')
+}
+@font-face
+{
+    font-family:"bold";
+    src: url('../fonts/PINGFANG\ BOLD.TTF')
+}
+@font-face
+{
+    font-family:"extra";
+    src: url('../fonts/PINGFANG\ EXTRALIGHT.TTF')
+}
+@font-face
+{
+    font-family:"heavy";
+    src: url('../fonts/PINGFANG\ HEAVY.TTF')
+}
+@font-face
+{
+    font-family:"light";
+    src: url('../fonts/PINGFANG\ LIGHT.TTF')
+}

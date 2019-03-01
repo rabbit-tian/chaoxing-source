@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta content="telephone=no" name="format-detection" />
+  <title>小王子</title>
+  <script src="../js/responsive.js"></script>
+  <link rel="stylesheet" href="../css/global.css" />
+  <!-- <link rel="stylesheet" href="../css/video-js.min.css"> -->
+  <link rel="stylesheet" href="../css/swiper.css">
+  <link rel="stylesheet" href="../css/videoIndex.css">
+  <style lang="">
+    .video-js .vjs-playing .vjs-tech {
+        pointer-events: auto;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="title">视频导读</div>
+      <div class="videoLive">
+        <div class="videosamplex">
+          <video id="videoplayer" src=""></video>
+        </div>
+        <!-- <video x5-playsinline="" playsinline="" webkit-playsinline="" id="my-player" controls="controls" loop="loop"  controls class="video-js vjs-default-skin vjs-big-play-centered" poster="../images/video_poster.png">
+          <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+        </video> -->
+        <!-- <div class="prompt" style="display: none;">
+          <h3>播放将消耗流量，是否继续播放？</h3>
+          <ul class="btns">
+            <li>继续播放</li>
+            <li class="active">连接wifi</li>
+          </ul>
+        </div> -->
+      </div>
+      <div class="tabBox">
+        <ul class="tabs clearfix">
+          <li class="active">推荐理由</li>
+          <li>书籍简介</li>
+          <li>作者简介</li>
+          <div class="line">
+            <div class="line-red"></div>
+          </div>
+        </ul>
+        <div class="panelBox">
+          <div class="panel reason show">
+            <div class="bookBackground">《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。本书的主人公是来自外星球的小王子。书中以一位飞行员作为故事叙述者，讲述了小王子从自己星球出发前往地球的过程中，所经历的各种历险。</div>
+            <div class="recommendRead">
+              <div class="readTitle clearfix">
+                <h3 class="fl">推荐阅读</h3>
+                <div class="more fr">
+                  <a href="javascript:;">
+                    <span>更多</span>
+                    <img src="../images/to_right.png" alt="">
+                  </a>
+                </div>
+              </div>
+
+              <div class="bookLists">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="../images/king.png" alt="">
+                      <h4>穷爸爸富爸爸</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png " alt="">
+                      <h4>活法</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png" alt="">
+                      <h4>活着</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png" alt="">
+                      <h4>Kids</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png " alt="">
+                      <h4>活法</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png" alt="">
+                      <h4>活着</h4>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/king.png" alt="">
+                      <h4>Kids</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reasonFooter">我是有底线的O(∩_∩)O</div>
+          </div>
+          <div class="panel bookRecommend">
+            <div class="bookRecTitle clearfix">
+              <div class="titleLeft fl">
+                <img src="../images/king.png" alt="">
+              </div>
+              <div class="titleRight fl">
+                <div class="titleRightTop">
+                  <h3>小王子</h3>
+                  <p>作者：万伽·欧尔特（德）</p>
+                  <p>译者：皮皮虾</p>
+                </div>
+                <dl>
+                  <dt>出版社：中国人民出版社</dt>
+                  <dd>出版时间：2018-10-16</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="bookRecMain">
+              <div class="bookInfo">《小王子》是法国作家安托万·德·圣·埃克苏佩里于1942年写成的著名儿童文学短篇小说。本书的主人公是来自外星球的小王子。书中以一位飞行员作为故事叙述者，讲述了小王子从自己星球出发前往地球的过程中，所经历的各种历险。</div>
+              <img src="../images/big_king.png" alt="">
+            </div>
+          </div>
+          <div class="panel authorRecommend">
+            <div class="author">
+              <img src="../images/king.png" alt="">
+              <span>余华</span>
+            </div>
+            <div class="aboutAuthor">
+              <p>圣埃克苏佩里（1900年6月29日－1944年7月31日），法国作家、飞行员，1900年6月29日生于法国里昂。1944年获得“法兰西烈士”称号。在他的经典儿童小说《小王子》出版一年后，为祖国披甲对抗纳粹德军。在1944年7月31日执行一次飞行任务时失踪。</p>
+              <p>他以于1943年出版的童话《小王子》而闻名于世，其他著名的小说有《夜航》、《人类的土地》等。位于其家乡的里昂圣-埃克苏佩里机场是以他命名的。</p>
+              <p>直到2004年4月，离奇失踪近60年的埃克苏佩里所驾驶的飞机残骸才在法国南部马赛海底附近被寻获。</p>
+              <p>在他逝世50周年时，法国人将他与小王子的形象印在50法郎的钞票上。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <ul class="clearfix">
+        <li>
+          <img src="../images/book.png" alt="">
+          <span>图书详情</span>
+        </li>
+        <li>
+          <img src="../images/test.png" alt="">
+          <span>阅读评测</span>
+        </li>
+        <li>
+          <img src="../images/pep.png" alt="">
+          <span>小组讨论</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../ckplayer/ckplayer.js" charset="utf-8"></script>
+  <!-- <script src="../js/video.min.js"></script>          -->
+  <script src="../js/swiper.js"></script>
+  <script src="../js/videoIndex.js"></script>
+</html>

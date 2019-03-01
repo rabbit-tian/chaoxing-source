@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 返回前的页面添加的协议
+    jsBridge.postNotification('CLIENT_WEB_EXTRAINFO', { refresh: "true" });
+    jsBridge.postNotification('CLIENT_EXIT_LEVEL', {});
+
+
+    // 返回到当前页添加的协议
+    jsBridge.bind("CLIENT_WEB_EXTRAINFO", function (object) {
+      if (!!object.refresh) {
+        window.location.reload();//这里进行刷新或者其他操作
+      }
+    });
+
+
+  </script>
+</body>
+</html>

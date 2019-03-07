@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    .signature{
+      width: 500px;
+      height: 500px;
+      border: 1px dotted yellowgreen;
+    }
+    .signature canvas{
+      height: 100%!important;
+    }
+  </style>
+</head>
+<body>
+  <div id="signature" class="signature"></div>
+  <div class="clear">清除</div>
+  <div class="getData">获取数据</div>
+  <div id="someelement"></div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./libs/flashcanvas.js"></script>
+  <script src="./libs/jSignature.min.js"></script>
+  <script>
+     $("#signature").jSignature();
+     $('.clear').on('click',function () {
+       $("#signature").jSignature("reset");
+     })
+     $('.getData').on('click',function () {
+      //  判断签名与否
+        console.log($("#signature").jSignature('getData', 'native').length);
+       var datapair = $("#signature").jSignature("getData", "svgbase64");
+       console.log(datapair);
+       var i = new Image()
+       i.src = "data:" + datapair[0] + "," + datapair[1];
+       $(i).appendTo($("#someelement")) // 添加图像（SVG），到 DOM
+     })
+
+  </script>
+</body>
+</html>

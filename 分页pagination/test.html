@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./pagination.css">
+  <style lang="">
+    .m-style a{
+      width: 40px;
+      height: 40px;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="M-box2 m-style"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./jquery.pagination.js"></script>
+  <script>
+    getData();
+    function getData() {
+        $.ajax({
+          url: "http://192.168.98.228/" + "schedule/adjust/getExcData",
+          method: "post",
+          dataType: "json",
+          data: {
+            curPage: 1,
+            pageSize: 4,
+            projectId: 190,
+            keyWord: ""
+          },
+          success: function (data) {
+            console.log(data);
+          }
+        });
+      }
+
+
+
+    $('.M-box2').pagination({
+        pageCount: 10,
+        current: 1,
+        coping: true,
+        homePage: '首页',
+        endPage: '末页',
+        prevContent: '上页',
+        nextContent: '下页',
+        callback: function (api) {
+          console.log(api.getCurrent());
+        }
+      });
+  </script>
+</body>
+</html>

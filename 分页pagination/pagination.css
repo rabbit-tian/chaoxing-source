@@ -1,4 +1,5 @@
 @charset "UTF-8";
+a {  text-decoration: none;  -webkit-tap-highlight-color: transparent;  -webkit-appearance: none;  }
 .m-style {
     position: relative;
     text-align: center;
@@ -19,9 +20,9 @@
 .m-style span {
     float: left;
     margin: 0 5px;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
     color: #bdbdbd;
     font-size: 14px;
 }
@@ -29,21 +30,21 @@
 .m-style .active {
     float: left;
     margin: 0 5px;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-    background: #e91e63;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    background: #4356ff;
+    border:1px solid #4356ff;
     color: #fff;
     font-size: 14px;
-    border: 1px solid #e91e63;
 }
 
 .m-style a {
     float: left;
     margin: 0 5px;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
     background: #fff;
     border: 1px solid #ebebeb;
     color: #bdbdbd;
@@ -52,14 +53,13 @@
 
 .m-style a:hover {
     color: #fff;
-    background: #e91e63;
+    background: #4356ff;
 }
 
 .m-style .next,
 .m-style .prev {
     font-family: "Simsun";
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
 }
 
 .now,

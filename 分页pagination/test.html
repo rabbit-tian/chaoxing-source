@@ -22,7 +22,7 @@
           dataType: "json",
           data: {
             curPage: curPage,
-            pageSize: 4,
+            pageSize: 1,
             projectId: 190,
             keyWord: ""
           },
@@ -36,7 +36,9 @@
               endPage: '末页',
               prevContent: '上页',
               nextContent: '下页',
-              mode: 'fixed',
+              jump: true, // 跳转到
+              // isHide: true, // 	总页数为0或1时隐藏分页控件
+              // mode: 'fixed',
               callback: function (api) {
                 console.log(api.getCurrent());
                 getData(api.getCurrent());
